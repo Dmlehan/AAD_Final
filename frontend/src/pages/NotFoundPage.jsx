@@ -6,24 +6,24 @@ export default function NotFoundPage() {
   return (
     <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
       <div style={{
-        width: '64px',
-        height: '64px',
-        margin: '0 auto 1.5rem',
-        background: 'rgba(244, 63, 94, 0.1)',
+        width: '56px',
+        height: '56px',
+        margin: '0 auto 1.25rem',
+        background: '#fff1f2',
         borderRadius: '50%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--accent-rose)',
+        color: '#e11d48',
       }}>
-        <HelpCircle size={36} />
+        <HelpCircle size={32} />
       </div>
-      <h2>Page Not Found</h2>
-      <p style={{ margin: '0.75rem auto 2rem', maxWidth: '400px' }}>
+      <h2 style={{ color: '#0f172a' }}>Page Not Found</h2>
+      <p style={{ margin: '0.5rem auto 1.75rem', maxWidth: '400px', color: '#64748b' }}>
         The page you are looking for does not exist or has been moved.
       </p>
       <Link to="/" className="btn btn-primary">
-        <ArrowLeft size={16} /> Return to Home
+        <ArrowLeft size={16} /> Return to Dashboard
       </Link>
     </div>
   );
