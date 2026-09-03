@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun } from 'lucide-react';
+import { Sun, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -13,10 +13,11 @@ export default function Header() {
           <span>Sun Baby <span style={{ color: 'var(--primary-600)' }}>English</span></span>
         </Link>
         <nav className="header-nav">
-          <Link to="/" className="nav-link active">Dashboard</Link>
-          <span className="badge badge-success">
-            <span className="status-dot"></span> System Live
-          </span>
+          <a href="#programs" className="nav-link">Programs</a>
+          <a href="#payment-flow" className="nav-link">Fee Payment Flow</a>
+          <a href="#portal" className="btn btn-primary" style={{ padding: '0.4rem 0.9rem', fontSize: '0.85rem' }}>
+            <Lock size={14} /> Staff Portal
+          </a>
         </nav>
       </div>
     </header>
