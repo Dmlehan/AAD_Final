@@ -46,6 +46,7 @@ public class GlobalExceptionHandlerTest {
     }
 
     @Test
+    @org.springframework.security.test.context.support.WithMockUser
     public void testNonExistentRouteReturns404Envelope() throws Exception {
         mockMvc.perform(get("/api/v1/non-existent-route-xyz")
                         .accept(MediaType.APPLICATION_JSON))
