@@ -6,6 +6,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import UserManagementPage from './pages/UserManagementPage';
+import MasterDataPage from './pages/MasterDataPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -16,6 +17,14 @@ export default function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
+            <Route
+              path="master-data"
+              element={
+                <ProtectedRoute>
+                  <MasterDataPage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="admin/users"
               element={

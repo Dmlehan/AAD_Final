@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Lock, LogOut, Users, User } from 'lucide-react';
+import { Sun, Lock, LogOut, Users, User, BookOpen } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -11,6 +11,8 @@ export default function Header() {
     logout();
     navigate('/login');
   };
+
+  const isAdmin = user?.role === 'ADMIN' || user?.role === 'ROLE_ADMIN';
 
   return (
     <header className="site-header">
@@ -28,7 +30,10 @@ export default function Header() {
 
           {isAuthenticated ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginLeft: '0.5rem' }}>
-              {user?.role === 'ADMIN' && (
+              <Link to="/master-data" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                <BookOpen size={15} /> Classes & Data
+              </Link>
+              {isAdmin && (
                 <Link to="/admin/users" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <Users size={15} /> Staff
                 </Link>
@@ -48,8 +53,8 @@ export default function Header() {
                 <span style={{
                   fontSize: '0.7rem',
                   padding: '0.1rem 0.4rem',
-                  background: user?.role === 'ADMIN' ? '#fef3c7' : '#e0f2fe',
-                  color: user?.role === 'ADMIN' ? '#92400e' : '#0369a1',
+                  background: isAdmin ? '#fef3c7' : '#e0f2fe',
+                  color: isAdmin ? '#92400e' : '#0369a1',
                   borderRadius: '999px',
                   fontWeight: 700
                 }}>
