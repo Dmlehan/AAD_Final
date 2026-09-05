@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Lock, LogOut, Users, User, BookOpen } from 'lucide-react';
+import { Sun, Lock, LogOut, Users, User, BookOpen, GraduationCap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -30,6 +30,9 @@ export default function Header() {
 
           {isAuthenticated ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginLeft: '0.5rem' }}>
+              <Link to="/students" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                <GraduationCap size={15} /> Students
+              </Link>
               <Link to="/master-data" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                 <BookOpen size={15} /> Classes & Data
               </Link>
